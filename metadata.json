@@ -1,0 +1,6 @@
+{
+  "name": "Tour Vitruvio Fano",
+  "description": "Portatole interattivo del Tour Vitruvio a Fano con mappa archeologica, geolocalizzazione live e audioguida.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

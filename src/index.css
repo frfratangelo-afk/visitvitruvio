@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-serif: "Lora", Georgia, serif;
+  --font-display-serif: "Playfair Display", serif;
+  --color-editorial-paper: #FAF9F6;
+  --color-editorial-ink: #1C1C1C;
+  --color-editorial-stone: #EFECE6;
+  --color-editorial-taupe: #8B8378;
+  --color-editorial-border: #D1CEC7;
+}
+
+/* Custom leaflet style fixes and interactive visual polish with Editorial theme */
+.leaflet-container {
+  font-family: var(--font-sans);
+  background-color: var(--color-editorial-stone) !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 0px !important;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid var(--color-editorial-border) !important;
+  background-color: var(--color-editorial-paper) !important;
+  padding: 4px;
+}
+
+.leaflet-popup-content {
+  font-family: var(--font-serif);
+  color: var(--color-editorial-ink);
+}
+
+.leaflet-popup-tip {
+  background-color: var(--color-editorial-paper) !important;
+  border: 1px solid var(--color-editorial-border);
+}
+
+/* Pulse animation for simulated/live GPS marker */
+@keyframes gpsPulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.gps-pulse-effect {
+  position: relative;
+}
+
+.gps-pulse-effect::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(139, 131, 120, 0.4);
+  animation: gpsPulse 2s infinite ease-out;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #FAF9F6;
+}
+
+/* Aesthetic ambient backgrounds */
+.ambient-sepia {
+  background-color: #FAF9F6;
+}
+
+.card-sepia {
+  background-color: #FAF9F6;
+  border: 1.5px solid #D1CEC7;
+}
+
+/* Scrollbar enhancements */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-editorial-border);
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-editorial-taupe);
+}
